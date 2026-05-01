@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enes - Hakkında</title>
+    <!-- Bootstrap CSS (Hazır tema değil, CSS kütüphanesi) -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Harici stil dosyamız -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-light">
+
+    <!-- Navigasyon Menüsü -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Proje</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-toggle="target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active" href="index.html">Hakkında</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Özgeçmiş (CV)</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Şehrim</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Mirasımız</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">İlgi Alanlarım</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">İletişim</a></li>
+                    <li class="nav-item"><a class="nav-link text-warning" href="#">Login</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hakkında İçeriği -->
+    <main class="container mt-5">
+        <section class="row align-items-center bg-white p-5 rounded shadow-sm">
+            <div class="col-md-4 text-center mb-4 mb-md-0">
+                <!-- Medya Öğesi 1: Resim -->
+                <img src="img/profil.jpg" alt="Enes Profil Fotoğrafı" class="img-fluid rounded-circle border border-3 border-dark" style="max-width: 250px;">
+            </div>
+            <div class="col-md-8">
+                <h1 class="display-5 fw-bold text-dark">Merhaba, ben Enes</h1>
+                <p class="lead text-muted">Sakarya Üniversitesi Bilgisayar Mühendisliği Öğrencisi</p>
+                <p>
+                    Algoritma tasarımı, C++, Python ve görüntü işleme gibi teknik konularda derin analizler yaparak çözümler üretmeye odaklanıyorum. Gelecekte savunma sanayisinde yenilikçi projelere liderlik etmeyi ve kendi teknoloji şirketimi kurmayı hedefliyorum.
+                </p>
+                
+                <h3 class="h5 mt-4 fw-bold">İlgi Alanlarım ve Etkinlikler</h3>
+                <ul>
+                    <li>Gömülü sistemler ve otonom araç algoritmaları üzerinde çalışmak.</li>
+                    <li>Psikolojik realizm ve tarihi biyografiler okuyarak stratejik düşünceyi beslemek.</li>
+                    <li>Sistemli bir şekilde fitness ve disiplinli bir günlük rutin yürütmek.</li>
+                </ul>
+
+                <div class="mt-4">
+                    <a href="https://github.com/KENDI_GITHUB_LINKIN" target="_blank" class="btn btn-dark">GitHub Profilim</a>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Medya Öğesi 2: Video (Opsiyonel ama istenmiş, bir YouTube embed'i) -->
+        <section class="row mt-4 mb-5">
+            <div class="col-12">
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        <h5 class="card-title fw-bold">Çalışma Disiplini / İlham Kaynağı</h5>
+                        <div class="ratio ratio-16x9 mt-3">
+                            <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="YouTube video" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
