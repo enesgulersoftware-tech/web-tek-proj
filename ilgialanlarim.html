@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enes - İlgi Alanlarım</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-light">
+
+    <!-- Navigasyon Menüsü -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Proje</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Hakkında</a></li>
+                    <li class="nav-item"><a class="nav-link" href="cv.html">Özgeçmiş (CV)</a></li>
+                    <li class="nav-item"><a class="nav-link" href="sehir.html">Şehrim</a></li>
+                    <li class="nav-item"><a class="nav-link" href="mirasimiz.html">Mirasımız</a></li>
+                    <!-- Aktif sayfa İlgi Alanlarım -->
+                    <li class="nav-item"><a class="nav-link active" href="ilgialanlarim.html">İlgi Alanlarım</a></li>
+                    <li class="nav-item"><a class="nav-link" href="iletisim.html">İletişim</a></li>
+                    <li class="nav-item"><a class="nav-link text-warning" href="login.html">Login</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Ana İçerik -->
+    <main class="container mt-5 mb-5">
+        <header class="text-center mb-5">
+            <h1 class="display-4 fw-bold text-dark">İlgi Alanlarım</h1>
+            <p class="lead text-muted">Yapay Zeka, Tarih, Psikoloji, Edebiyat</p>
+        </header>
+
+        <!-- Kartlar Bölümü (İlgi Alanları) -->
+        <section class="row g-4 mb-5">
+            
+            <!-- İlgi Alanı 1: Yapay Zeka ve Görüntü İşleme -->
+            <div class="col-md-6">
+                <div class="card h-100 shadow-sm border-0 p-3">
+                    <div class="card-body">
+                        <h3 class="card-title fw-bold text-primary">Yapay Zeka ve Görüntü İşleme</h3>
+                        <p class="card-text">
+                            Yapay zeka geliştirmek ilgi alanım ve hedeflerim arasındadır. Özellikle bunu gömülü sistemlere entegre etmek istiyorum
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- İlgi Alanı 2: Stratejik Liderlik ve Tarih -->
+            <div class="col-md-6">
+                <div class="card h-100 shadow-sm border-0 p-3">
+                    <div class="card-body">
+                        <h3 class="card-title fw-bold text-primary">Tarih</h3>
+                        <p class="card-text">
+                            Özellikle tarihte yaşamış ve büyük başarılara ulaşmış liderlerin hayatlarını okumayı, yaptıklarını analiz etmeyi ve düşünce yapılarını öğrenmeyi seviyorum
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="row g-5 mb-5">
+            <div class="col-md-6">
+                <div class="card h-100 shadow-sm border-0 p-3">
+                    <div class="card-body">
+                        <h3 class="card-title fw-bold text-primary">Psikoloji</h3>
+                        <p class="card-text">
+                            Başarıya ulaşmanın en büyük şartlarından bir tanesi de şüphesiz ki kendi psikolojimizi kontrol etmektir. Kendini yönetebilen insan her şeyi yönetebilir. Psikolojinin sunduğu bu avantajları kişisel gelişimimde kullanmanın yanı sıra bu alanda çalışmak benim için büyük bir hobidir 
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="card h-100 shadow-sm border-0 p-3">
+                    <div class="card-body">
+                        <h3 class="card-title fw-bold text-primary">Edebiyat</h3>
+                        <p class="card-text">
+                            Kime sorarsanız sorun roman okumak bir okur için vazgeçilmez türlerden bir tanesidir. Özellikle usta kalemlerden çıkan eserler bizlere hayatı öğretmekle kalmaz felsefi derinliği ile düşüncelerimizi şekillendirirler. Benim de özellikle sevdiğim romanlar felsefi derinliği yüksek olan eserlerdir
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+
+        </section>
+
+        <!-- API İLE VERİ ÇEKME BÖLÜMÜ (JavaScript) -->
+        <section class="row justify-content-center mt-5">
+            <div class="col-md-8">
+                <div class="card shadow-lg border-0 bg-dark text-white text-center p-4">
+                    <div class="card-body">
+                        <h4 class="fw-bold mb-3 text-warning">Günlük Sözler (API)</h4>
+                        <p class="small text-muted mb-4">Aşağıdaki içerik, harici bir REST API sunucusundan (dummyjson.com) anlık olarak çekilmektedir.</p>
+                        
+                        <blockquote class="blockquote" id="quote-box">
+                            <!-- Veri buraya gelecek -->
+                            <p class="mb-2 fs-5 fst-italic" id="quote-text">Fetching data from server...</p>
+                            <footer class="blockquote-footer text-light mt-2" id="quote-author"></footer>
+                        </blockquote>
+                        
+                        <!-- Butonlar Yan Yana -->
+                        <div class="d-flex justify-content-center gap-3 mt-4">
+                            <button class="btn btn-outline-light px-4" onclick="getQuote()">Get New Quote</button>
+                            <!-- Çeviri Butonu (Linki JS ile dolacak) -->
+                            <a id="translate-btn" href="#" target="_blank" class="btn btn-warning px-4 disabled">Google Çeviri</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- JavaScript: Harici API ve Dinamik Çeviri Mantığı -->
+    <script>
+        function getQuote() {
+            const quoteText = document.getElementById('quote-text');
+            const quoteAuthor = document.getElementById('quote-author');
+            const translateBtn = document.getElementById('translate-btn');
+            
+            // Veri gelene kadar ekranda yazacak bekleme mesajı ve buton kitleme
+            quoteText.innerHTML = "Fetching data from server...";
+            quoteAuthor.innerHTML = "";
+            translateBtn.classList.add("disabled"); 
+            
+            // Harici sunucuya (API) HTTP GET isteği atıyoruz
+            fetch('https://dummyjson.com/quotes/random')
+                .then(response => response.json()) 
+                .then(data => {
+                    // JSON'un içindeki verileri HTML'e yazdır
+                    quoteText.innerHTML = `"${data.quote}"`;
+                    quoteAuthor.innerHTML = data.author;
+                    
+                    // Gelen İngilizce metni URL formatına dönüştür
+                    const metinURL = encodeURIComponent(`"${data.quote}" - ${data.author}`);
+                    
+                    // Google Çeviri linkini dinamik olarak oluşturup butona entegre et
+                    translateBtn.href = `https://translate.google.com/?sl=en&tl=tr&text=${metinURL}&op=translate`;
+                    translateBtn.classList.remove("disabled"); // Butonu tekrar aktif et
+                })
+                .catch(error => {
+                    quoteText.innerHTML = "Failed to load data. Please try again.";
+                    console.error('API Error:', error);
+                });
+        }
+
+        // Sayfa yüklendiğinde fonksiyonu otomatik olarak bir kez çalıştır
+        window.onload = getQuote;
+    </script>
+</body>
+</html>
