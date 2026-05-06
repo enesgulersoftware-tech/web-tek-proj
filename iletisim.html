@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enes - İletişim</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="img/turkey.png">
+</head>
+<body class="bg-light">
+
+    <!-- Navigasyon Menüsü -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Proje</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Hakkında</a></li>
+                    <li class="nav-item"><a class="nav-link" href="cv.html">Özgeçmiş (CV)</a></li>
+                    <li class="nav-item"><a class="nav-link" href="sehir.html">Şehrim</a></li>
+                    <li class="nav-item"><a class="nav-link" href="mirasimiz.html">Mirasımız</a></li>
+                    <li class="nav-item"><a class="nav-link" href="ilgialanlarim.html">İlgi Alanlarım</a></li>
+                    <!-- Aktif sayfa İletişim -->
+                    <li class="nav-item"><a class="nav-link active" href="iletisim.html">İletişim</a></li>
+                    <li class="nav-item"><a class="nav-link text-warning" href="login.html">Login</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Ana İçerik -->
+    <main class="container mt-5 mb-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8 col-lg-6">
+                <div class="card shadow-lg border-0 rounded-4">
+                    <div class="card-body p-5">
+                        <h2 class="text-center fw-bold mb-4">İletişime Geç</h2>
+                        <p class="text-center text-muted mb-4">Sorularınız veya iş birliği teklifleriniz için formu doldurabilirsiniz.</p>
+
+                        <!-- Form Başlangıcı -->
+                        <form id="contactForm" novalidate>
+                            <!-- İsim Alanı -->
+                            <div class="mb-3">
+                                <label for="name" class="form-label fw-semibold">Ad Soyad</label>
+                                <input type="text" class="form-control" id="name" placeholder="Adınızı giriniz">
+                                <div id="nameError" class="text-danger small mt-1"></div>
+                            </div>
+
+                            <!-- E-posta Alanı -->
+                            <div class="mb-3">
+                                <label for="email" class="form-label fw-semibold">E-posta Adresi</label>
+                                <input type="email" class="form-control" id="email" placeholder="ornek@mail.com">
+                                <div id="emailError" class="text-danger small mt-1"></div>
+                            </div>
+
+                            <!-- Konu Alanı -->
+                            <div class="mb-3">
+                                <label for="subject" class="form-label fw-semibold">Konu</label>
+                                <select class="form-select" id="subject">
+                                    <option value="" selected disabled>Bir konu seçiniz</option>
+                                    <option value="Proje Teklifi">Proje Teklifi</option>
+                                    <option value="Bilgi Almak İstiyorum">Bilgi Almak İstiyorum</option>
+                                    <option value="Hata Bildirimi">Hata Bildirimi</option>
+                                </select>
+                                <div id="subjectError" class="text-danger small mt-1"></div>
+                            </div>
+
+                            <!-- Mesaj Alanı -->
+                            <div class="mb-4">
+                                <label for="message" class="form-label fw-semibold">Mesajınız</label>
+                                <textarea class="form-control" id="message" rows="4" placeholder="Mesajınızı buraya yazınız..."></textarea>
+                                <div id="messageError" class="text-danger small mt-1"></div>
+                            </div>
+
+                            <!-- Butonlar -->
+                            <div class="d-grid gap-2">
+                                <button type="button" class="btn btn-primary py-2 fw-bold" onclick="validateForm()">Gönder</button>
+                                <button type="reset" class="btn btn-outline-secondary py-2" onclick="clearErrors()">Temizle</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- JavaScript: Form Validation Mantığı -->
+    <script>
+        function validateForm() {
+            // Hata mesajlarını temizle
+            clearErrors();
+
+            // Form verilerini al
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value.trim();
+
+            let isValid = true;
+
+            // İsim Kontrolü
+            if (name === "") {
+                document.getElementById('nameError').innerText = "Lütfen adınızı giriniz.";
+                isValid = false;
+            } else if (name.length < 3) {
+                document.getElementById('nameError').innerText = "Adınız en az 3 karakter olmalıdır.";
+                isValid = false;
+            }
+
+            // E-posta Kontrolü (Regex ile)
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (email === "") {
+                document.getElementById('emailError').innerText = "E-posta alanı boş bırakılamaz.";
+                isValid = false;
+            } else if (!emailPattern.test(email)) {
+                document.getElementById('emailError').innerText = "Geçerli bir e-posta adresi giriniz.";
+                isValid = false;
+            }
+
+            // Konu Kontrolü
+            if (subject === "") {
+                document.getElementById('subjectError').innerText = "Lütfen bir konu seçiniz.";
+                isValid = false;
+            }
+
+            // Mesaj Kontrolü
+            if (message === "") {
+                document.getElementById('messageError').innerText = "Mesaj alanı boş bırakılamaz.";
+                isValid = false;
+            }
+
+            // Eğer her şey doğruysa
+            if (isValid) {
+                alert("Mesajınız başarıyla iletildi!\n\nAd: " + name + "\nE-posta: " + email + "\nKonu: " + subject);
+                document.getElementById('contactForm').reset();
+            }
+        }
+
+        function clearErrors() {
+            const errors = document.querySelectorAll('.text-danger');
+            errors.forEach(error => error.innerText = "");
+        }
+    </script>
+</body>
+</html>
