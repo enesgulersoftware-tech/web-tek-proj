@@ -2,7 +2,7 @@
 // Gelen verinin POST metodu ile gelip gelmediğini kontrol et
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
-    // Öğrenci numarası (Kendi güncel numaran ile değiştir)
+    // Öğrenci numarası
     $ogrenci_no = "b251210107"; // Örnek olarak yazdım.
     
     // Proje dokümanına göre belirlenen kurallar

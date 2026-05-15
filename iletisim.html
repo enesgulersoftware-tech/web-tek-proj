@@ -27,11 +27,11 @@
                     <li class="nav-item"><a class="nav-link" href="ilgialanlarim.html">İlgi Alanlarım</a></li>
                     <li class="nav-item"><a class="nav-link active" href="iletisim.html">İletişim</a></li>
                     <li class="nav-item"><a class="nav-link text-warning" href="login.html">Login</a></li>
-                </ul>
-            </div>
+                </ul> 
+            </div> 
         </div>
     </nav>
-
+    
     <main class="container mt-5 mb-5" id="app">
         <div class="row justify-content-center">
             <div class="col-md-8">
@@ -46,7 +46,7 @@
                                 <li v-for="hata in vueHatalar">{{ hata }}</li>
                             </ul>
                         </div>
-
+                        
                         <form id="iletisimForm" action="iletisim.php" method="POST">
                             
                             <div class="mb-3">
@@ -112,7 +112,7 @@
         function nativeValidation() {
             const hataKutusu = document.getElementById('nativeHata');
             hataKutusu.innerHTML = "";
-            hataKutusu.classList.add('d-none');
+            hataKutusu.classList.add('d-none');//display: none class'ını ekliyoruz
 
             const isim = document.getElementById('isim').value.trim();
             const email = document.getElementById('email').value.trim();
@@ -136,7 +136,7 @@
             }
         }
     </script>
-
+    
     <script>
         const { createApp } = Vue;
 
